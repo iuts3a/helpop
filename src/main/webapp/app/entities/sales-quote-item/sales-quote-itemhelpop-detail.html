@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span data-translate="helpopApp.salesQuoteItem.detail.title">Sales Quote Item</span> {{vm.salesQuoteItem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="helpopApp.salesQuoteItem.createdAt">Created At</span></dt>
+        <dd>
+            <span>{{vm.salesQuoteItem.createdAt | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.salesQuoteItem.updatedAt">Updated At</span></dt>
+        <dd>
+            <span>{{vm.salesQuoteItem.updatedAt | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="sales-quote-itemhelpop-detail.edit({id:vm.salesQuoteItem.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

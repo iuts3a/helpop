@@ -1,0 +1,23 @@
+{
+    "helpopApp": {
+        "salesOrderItem" : {
+            "home": {
+                "title": "Sales Order Items",
+                "createLabel": "Create a new Sales Order Item",
+                "createOrEditLabel": "Create or edit a Sales Order Item",
+                "search": "Search for Sales Order Item"
+            },
+            "created": "A new Sales Order Item is created with identifier {{ param }}",
+            "updated": "A Sales Order Item is updated with identifier {{ param }}",
+            "deleted": "A Sales Order Item is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sales Order Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Sales Order Item"
+            },
+            "createdAt": "Created At",
+            "updatedAt": "Updated At"
+        }
+    }
+}

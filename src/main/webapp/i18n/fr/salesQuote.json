@@ -1,0 +1,23 @@
+{
+    "helpopApp": {
+        "salesQuote" : {
+            "home": {
+                "title": "SalesQuotes",
+                "createLabel": "Créer un nouveau Sales Quote",
+                "createOrEditLabel": "Créer ou éditer un Sales Quote",
+                "search": "Recherche pour Sales Quote"
+            },
+            "created": "Un nouveau Sales Quote a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sales Quote avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sales Quote avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sales Quote {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sales Quote"
+            },
+            "quotedAt": "Quoted At",
+            "items": "Items"
+        }
+    }
+}

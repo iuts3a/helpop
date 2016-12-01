@@ -1,4 +1,3 @@
-
 entity Address {
 	countryId Integer required,
     city String required,
@@ -7,21 +6,19 @@ entity Address {
     postCode String required
 }
 
-entity User {
+entity Customer {
 	firstName String required,
     lastName String required,
     password String required,
     email String required,
     consummerGrade String,
     offererGrade String,
-    address Address
 }
 
 entity Offer {
 	name String required,
 	priceUSD Double required,
     discountPercent Double,
-	owner User required,
 	createdAt ZonedDateTime required,
     limitAt ZonedDateTime,
     grade Float,
@@ -31,26 +28,20 @@ entity Offer {
 }
 
 entity SalesQuote {
-	listItems SalesQuoteItem required,
-    owner User required,
     quotedAt ZonedDateTime required
 }
 
 entity SalesQuoteItem {
-	offer Offer required,
     createdAt ZonedDateTime required,
     updatedAt ZonedDateTime
 }
 
 entity SalesOrder {
-	listItems SalesOrderItem required,
-    owner User required,
     orderedAt ZonedDateTime required
 }
 
 entity SalesOrderItem {
-	offer Offer required,
-    createdAt ZonedDateTime required, 
+    createdAt ZonedDateTime required,
     updatedAt ZonedDateTime
 }
 
@@ -62,16 +53,28 @@ enum OfferType {
 	SERVICE, PRODUCT
 }
 
+relationship ManyToOne {
+	Offer{owner} to Customer
+}
+
 relationship OneToOne {
-	User{address} to Address
+	Customer{salesQuote} to SalesQuote
+}
+
+relationship ManyToMany {
+	Customer{orders} to SalesOrder
+}
+
+relationship OneToOne {
+	Customer{address} to Address
 }
 
 relationship ManyToOne {
-	SalesQuote{listItems} to SalesQuoteItem
+	SalesQuote{items} to SalesQuoteItem
 }
 
 relationship ManyToOne {
-	SalesOrder{listItems} to SalesOrderItem
+	SalesOrder{items} to SalesOrderItem
 }
 
 // Set pagination options

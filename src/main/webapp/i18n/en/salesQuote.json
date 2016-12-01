@@ -1,0 +1,23 @@
+{
+    "helpopApp": {
+        "salesQuote" : {
+            "home": {
+                "title": "Sales Quotes",
+                "createLabel": "Create a new Sales Quote",
+                "createOrEditLabel": "Create or edit a Sales Quote",
+                "search": "Search for Sales Quote"
+            },
+            "created": "A new Sales Quote is created with identifier {{ param }}",
+            "updated": "A Sales Quote is updated with identifier {{ param }}",
+            "deleted": "A Sales Quote is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sales Quote {{ id }}?"
+            },
+            "detail": {
+                "title": "Sales Quote"
+            },
+            "quotedAt": "Quoted At",
+            "items": "Items"
+        }
+    }
+}
