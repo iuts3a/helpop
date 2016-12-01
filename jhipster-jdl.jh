@@ -1,3 +1,12 @@
+
+entity Address {
+	countryId Integer required,
+    city String required,
+	street1 String,
+    street2 String,
+    postCode String required
+}
+
 entity User {
 	firstName String required,
     lastName String required,
@@ -6,14 +15,6 @@ entity User {
     consummerGrade String,
     offererGrade String,
     address Address
-}
-
-entity Address {
-	countryId Integer required,
-    city String required,
-	street1 String,
-    street2 String,
-    postCode String required
 }
 
 entity Offer {
