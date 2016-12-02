@@ -1,76 +1,23 @@
 <div>
     <h2 data-translate="helpopApp.offer.home.title">Offers</h2>
     <jhi-alert></jhi-alert>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="offerhelpop.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="helpopApp.offer.home.createLabel">
-                        Create new Offer
-                    </span>
-                </button>
+            <div class="col-md-9">
+                <div class="row" ng-repeat="offer in vm.offers track by offer.id">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 id="priceUSD" class="pull-right">${{offer.priceUSD}}</h4>
+                                <h4><a id="name" ui-sref="offer({id:offer.id})">{{offer.name}}</a>
+                                </h4>
+                                <p id="description">{{offer.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name"><span data-translate="helpopApp.offer.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="priceUSD"><span data-translate="helpopApp.offer.priceUSD">Price USD</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="discountPercent"><span data-translate="helpopApp.offer.discountPercent">Discount Percent</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdAt"><span data-translate="helpopApp.offer.createdAt">Created At</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="limitAt"><span data-translate="helpopApp.offer.limitAt">Limit At</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="grade"><span data-translate="helpopApp.offer.grade">Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="timeType"><span data-translate="helpopApp.offer.timeType">Time Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="offerType"><span data-translate="helpopApp.offer.offerType">Offer Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="description"><span data-translate="helpopApp.offer.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="ownerId"><span data-translate="helpopApp.offer.owner">Owner</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
-                <tr ng-repeat="offer in vm.offers track by offer.id">
-                    <td><a ui-sref="offerhelpop-detail({id:offer.id})">{{offer.id}}</a></td>
-                    <td>{{offer.name}}</td>
-                    <td>{{offer.priceUSD}}</td>
-                    <td>{{offer.discountPercent}}</td>
-                    <td>{{offer.createdAt | date:'medium'}}</td>
-                    <td>{{offer.limitAt | date:'medium'}}</td>
-                    <td>{{offer.grade}}</td>
-                    <td data-translate="{{'helpopApp.OfferTimeType.' + offer.timeType}}">{{offer.timeType}}</td>
-                    <td data-translate="{{'helpopApp.OfferType.' + offer.offerType}}">{{offer.offerType}}</td>
-                    <td>{{offer.description}}</td>
-                    <td>
-                        <a ui-sref="customerhelpop-detail({id:offer.ownerId})">{{offer.ownerId}}</a>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="offerhelpop-detail({id:offer.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="offerhelpop.edit({id:offer.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="offerhelpop.delete({id:offer.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>
