@@ -1,0 +1,23 @@
+<div>
+    <h2 data-translate="helpopApp.offer.home.title">Offers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row" ng-repeat="offer in vm.offers track by offer.id">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 id="priceUSD" class="pull-right">${{offer.priceUSD}}</h4>
+                                <h4><a id="name" ui-sref="offer({id:offer.id})">{{offer.name}}</a>
+                                </h4>
+                                <p id="description">{{offer.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
