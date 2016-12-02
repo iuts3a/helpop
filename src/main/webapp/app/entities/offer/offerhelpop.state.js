@@ -9,11 +9,35 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
+        .state('offers', {
+            parent: 'entity',
+            url: '/offers',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'helpopApp.offer.home.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/offer/offers.html',
+                    controller: 'OfferController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('offer');
+                    $translatePartialLoader.addPart('offerTimeType');
+                    $translatePartialLoader.addPart('offerType');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
+            }
+        })
         .state('offerhelpop', {
             parent: 'entity',
             url: '/offerhelpop',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_ADMIN'],
                 pageTitle: 'helpopApp.offer.home.title'
             },
             views: {
