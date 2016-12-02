@@ -1,0 +1,88 @@
+entity Address {
+	countryId Integer required,
+    city String required,
+	street1 String,
+    street2 String,
+    postCode String required
+}
+
+entity Customer {
+	firstName String required,
+    lastName String required,
+    password String required,
+    email String required,
+    consummerGrade String,
+    offererGrade String,
+}
+
+entity Offer {
+	name String required,
+	priceUSD Double required,
+    discountPercent Double,
+	createdAt ZonedDateTime required,
+    limitAt ZonedDateTime,
+    grade Float,
+    timeType OfferTimeType required,
+    offerType OfferType required,
+    description String
+}
+
+entity SalesQuote {
+    quotedAt ZonedDateTime required
+}
+
+entity SalesQuoteItem {
+    createdAt ZonedDateTime required,
+    updatedAt ZonedDateTime
+}
+
+entity SalesOrder {
+    orderedAt ZonedDateTime required
+}
+
+entity SalesOrderItem {
+    createdAt ZonedDateTime required,
+    updatedAt ZonedDateTime
+}
+
+enum OfferTimeType {
+	TEMPORARY, NOTIMELIMIT
+}
+
+enum OfferType {
+	SERVICE, PRODUCT
+}
+
+relationship ManyToOne {
+	Offer{owner} to Customer
+}
+
+relationship OneToOne {
+	Customer{salesQuote} to SalesQuote
+}
+
+relationship ManyToMany {
+	Customer{orders} to SalesOrder
+}
+
+relationship OneToOne {
+	Customer{address} to Address
+}
+
+relationship ManyToOne {
+	SalesQuote{items} to SalesQuoteItem
+}
+
+relationship ManyToOne {
+	SalesOrder{items} to SalesOrderItem
+}
+
+// Set pagination options
+paginate Offer with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with helpop

@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="helpopApp.offer.detail.title">Offer</span> {{vm.offer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="helpopApp.offer.name">Name</span></dt>
+        <dd>
+            <span>{{vm.offer.name}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.priceUSD">Price USD</span></dt>
+        <dd>
+            <span>{{vm.offer.priceUSD}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.discountPercent">Discount Percent</span></dt>
+        <dd>
+            <span>{{vm.offer.discountPercent}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.createdAt">Created At</span></dt>
+        <dd>
+            <span>{{vm.offer.createdAt | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.limitAt">Limit At</span></dt>
+        <dd>
+            <span>{{vm.offer.limitAt | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.grade">Grade</span></dt>
+        <dd>
+            <span>{{vm.offer.grade}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.timeType">Time Type</span></dt>
+        <dd>
+            <span data-translate="{{'helpopApp.OfferTimeType.' + vm.offer.timeType}}">{{vm.offer.timeType}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.offerType">Offer Type</span></dt>
+        <dd>
+            <span data-translate="{{'helpopApp.OfferType.' + vm.offer.offerType}}">{{vm.offer.offerType}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.description">Description</span></dt>
+        <dd>
+            <span>{{vm.offer.description}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.offer.owner">Owner</span></dt>
+        <dd>
+            <a ui-sref="customerhelpop-detail({id:vm.offer.ownerId})">{{vm.offer.ownerId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="offerhelpop-detail.edit({id:vm.offer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,9 @@
+{
+    "helpopApp": {
+        "OfferTimeType" : {
+            "null": "",
+            "TEMPORARY": "TEMPORARY",
+            "NOTIMELIMIT": "NOTIMELIMIT"
+        }
+    }
+}

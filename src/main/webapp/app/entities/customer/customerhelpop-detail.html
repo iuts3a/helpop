@@ -1,0 +1,57 @@
+
+<div>
+    <h2><span data-translate="helpopApp.customer.detail.title">Customer</span> {{vm.customer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="helpopApp.customer.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.customer.firstName}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.customer.lastName}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.password">Password</span></dt>
+        <dd>
+            <span>{{vm.customer.password}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.email">Email</span></dt>
+        <dd>
+            <span>{{vm.customer.email}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.consummerGrade">Consummer Grade</span></dt>
+        <dd>
+            <span>{{vm.customer.consummerGrade}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.offererGrade">Offerer Grade</span></dt>
+        <dd>
+            <span>{{vm.customer.offererGrade}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.salesQuote">Sales Quote</span></dt>
+        <dd>
+            <a ui-sref="sales-quotehelpop-detail({id:vm.customer.salesQuoteId})">{{vm.customer.salesQuoteId}}</a>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.address">Address</span></dt>
+        <dd>
+            <a ui-sref="addresshelpop-detail({id:vm.customer.addressId})">{{vm.customer.addressId}}</a>
+        </dd>
+        <dt><span data-translate="helpopApp.customer.orders">Orders</span></dt>
+        <dd>
+            <span ng-repeat="orders in vm.customer.orders">
+                <a ui-sref="sales-orderhelpop-detail({id: orders.id})">{{orders.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="customerhelpop-detail.edit({id:vm.customer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

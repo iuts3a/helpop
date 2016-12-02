@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="helpopApp.address.detail.title">Address</span> {{vm.address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="helpopApp.address.countryId">Country Id</span></dt>
+        <dd>
+            <span>{{vm.address.countryId}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.address.city">City</span></dt>
+        <dd>
+            <span>{{vm.address.city}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.address.street1">Street 1</span></dt>
+        <dd>
+            <span>{{vm.address.street1}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.address.street2">Street 2</span></dt>
+        <dd>
+            <span>{{vm.address.street2}}</span>
+        </dd>
+        <dt><span data-translate="helpopApp.address.postCode">Post Code</span></dt>
+        <dd>
+            <span>{{vm.address.postCode}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="addresshelpop-detail.edit({id:vm.address.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

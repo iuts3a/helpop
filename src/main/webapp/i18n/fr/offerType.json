@@ -1,0 +1,9 @@
+{
+    "helpopApp": {
+        "OfferType" : {
+            "null": "",
+            "SERVICE": "SERVICE",
+            "PRODUCT": "PRODUCT"
+        }
+    }
+}

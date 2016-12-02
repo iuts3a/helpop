@@ -22,5 +22,21 @@
 
     <cache alias="org.iuts3a.social.SocialUserConnection" uses-template="simple"/>
 
+    <cache alias="org.iuts3a.domain.Address" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.Customer" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.Customer.orders" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.Offer" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.SalesQuote" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.SalesQuoteItem" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.SalesOrder" uses-template="simple"/>
+
+    <cache alias="org.iuts3a.domain.SalesOrderItem" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

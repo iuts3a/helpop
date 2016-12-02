@@ -1,0 +1,23 @@
+{
+    "helpopApp": {
+        "salesOrder" : {
+            "home": {
+                "title": "SalesOrders",
+                "createLabel": "Créer un nouveau Sales Order",
+                "createOrEditLabel": "Créer ou éditer un Sales Order",
+                "search": "Recherche pour Sales Order"
+            },
+            "created": "Un nouveau Sales Order a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sales Order avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sales Order avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sales Order {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sales Order"
+            },
+            "orderedAt": "Ordered At",
+            "items": "Items"
+        }
+    }
+}
