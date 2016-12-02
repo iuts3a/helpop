@@ -57,6 +57,30 @@
                 }]
             }
         })
+        .state('offer', {
+            parent: 'entity',
+            url: '/offer',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'helpopApp.offer.home.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/offer/offer.html',
+                    controller: 'OfferController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('offer');
+                    $translatePartialLoader.addPart('offerTimeType');
+                    $translatePartialLoader.addPart('offerType');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
+            }
+        })
         .state('offerhelpop-detail', {
             parent: 'entity',
             url: '/offerhelpop/{id}',
