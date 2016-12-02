@@ -59,7 +59,7 @@
         })
         .state('offer', {
             parent: 'entity',
-            url: '/offer',
+            url: '/offer/{id}',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'helpopApp.offer.home.title'
